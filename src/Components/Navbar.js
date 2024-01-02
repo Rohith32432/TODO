@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
     <>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a className="navbar-brand" href="#">Navbar</a>
+  <Link className="navbar-brand" href="#">Navbar</Link>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -12,24 +13,24 @@ function Navbar() {
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav mr-auto">
       <li className="nav-item active">
-        <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+        <Link className="nav-link" href="#">Home <span className="sr-only">(current)</span></Link>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Link</a>
+        <Link className="nav-link" href="#">Link</Link>
       </li>
       <li className="nav-item dropdown">
-        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <Link className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
-        </a>
+        </Link>
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a className="dropdown-item" href="#">Action</a>
-          <a className="dropdown-item" href="#">Another action</a>
+          <Link className="dropdown-item" href="#">Action</Link>
+          <Link className="dropdown-item" href="#">Another action</Link>
           <div className="dropdown-divider"></div>
-          <a className="dropdown-item" href="#">Something else here</a>
+          <Link className="dropdown-item" href="#">Something else here</Link>
         </div>
       </li>
       <li className="nav-item">
-        <a className="nav-link disabled" href="#">Disabled</a>
+        <Link className="nav-link disabled" href="#">Disabled</Link>
       </li>
     </ul>
     <form className="form-inline my-2 my-lg-0">
