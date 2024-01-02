@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.todo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  
+}
+input{
+  padding: 5px 10px;
+  margin: 5px;
+}
+button{
+  padding: 5px;
+  margin: 2px;
+}
+.list{
+ text-transform: capitalize;
+  display: flex;
+  align-items: center;
+
+}
