@@ -8,6 +8,7 @@ import { createMyContext, name } from './hooks/contex'; // Import the function, 
 import { setlocal } from './hooks/customhook'
 import Maincontext from './maincontext';
 import Nodecontext from './hooks/prwaticecontext';
+import Navbar from './Components/Navbar';
 // Call the function to get the context
 const MyContext = createMyContext();
 console.log(MyContext);
@@ -51,11 +52,11 @@ function App() {
     }
   };
   
-  let getcon = useContext(Nodecontext);
-  // console.log(getcon.name);
+
 
   return (
     <>
+    <Navbar/>
       <div className='todo'>
         <h1>To Do</h1>
         <Additems adddata={save} />
