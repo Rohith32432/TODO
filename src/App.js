@@ -1,15 +1,12 @@
-// App.js
-import React, { useContext, useState } from 'react';
-import './App.css';
+import React, { useState } from 'react';
+import './assets/todo.css'
+import './App.css'
 import Additems from './Components/additems';
 import Listitems from './Components/Listitems';
 
 
 function App() {
   const [data, setdata] = useState([]);
-
-
-  let c = 0
   const save = (info) => {
     if (!data.includes(info))
       setdata([...data, info]);
@@ -38,20 +35,29 @@ function App() {
       setdata(newData);
     }
   };
-  
+  const [editname,setename]=useState('')
+  function update(name){
+    console.log(name);
+    setename(name)
+  }
 
 
   return (
     <>
-    {/* <Navbar/> */}
-      <div className='todo'>
-        <h1>To Do</h1>
-        <Additems adddata={save} />
-        {data.map((dat, index) => (
-          <Listitems key={index} id={index} name={dat} remove={del} onup={forward} ondown={backword} />
-        ))}
+      <div className="App">
+        <div className='todo'>
+          <h1>To Do</h1>
+          <Additems adddata={save} update={editname} />
+          <div className="main-list">
+ 
+          {data.map((dat, index) => (
+            <Listitems key={index} id={index} name={dat} remove={del} edit={update} onup={forward} ondown={backword} />
+          ))}
+          </div>
+        
+        </div>
       </div>
-     
+
     </>
   );
 }

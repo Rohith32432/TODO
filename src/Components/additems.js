@@ -1,25 +1,35 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import '../assets/todo.css';
 
-function Additems({adddata}) {
+function Additems({ adddata, update }) {
+  const [item, setItem] = useState('');
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setItem(value);
 
-const [item,setitem]=useState('')
+  };
 
-const handlechange=(e)=>{
-  let value=e.target.value
-   setitem(value)
-}
-function setitems(e){
-    e.preventDefault()
-    adddata(item)
-}
-
+  const setItems = (e) => {
+    e.preventDefault();
+    adddata(item);  
+    setItem('');
+  };
+useEffect(()=>{
+  if(update) setItem(update)
+},[update])
   return (
-    <div>
-        <form >
-        <input type="text" name='item-name' onChange={handlechange}  value={item}/>
-        <button type='submit' onClick={setitems}>ADD-Items</button></form>
+    <div className='additems'>
+      <form>
+        <input
+          type="text"
+          name='item-name'
+          onChange={handleChange}
+          value={item}
+        />
+        <button type='submit' onClick={setItems}>{!update.length>0 ? 'Add Item':'Update'}</button>
+      </form>
     </div>
-  )
+  );
 }
 
-export default Additems
+export default Additems;

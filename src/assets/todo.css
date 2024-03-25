@@ -1,0 +1,98 @@
+
+.todo{
+    width: 550px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.297);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius:10px;
+  }
+  .todo .main-list::-webkit-scrollbar{
+    background-color: #262931;
+    width: 10px;
+  }
+  .todo .main-list::-webkit-scrollbar-thumb{
+    background-color: #747474c0;
+    border-radius: 10px;
+  }
+  
+  .additems{
+    width: 100%;
+    position: relative;
+  }
+  .additems input{
+    width: 90%;
+    margin: 5px;
+    padding: 7px 10px;
+    margin: 5px;
+    border: none;
+    color: azure;
+    font-size: larger;
+    background-color: #262931;
+    border-radius: 6px;
+  }
+  .additems button{
+    position: absolute;
+    right: 0;
+    top: 4px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: medium;
+    padding: 10px;
+    border: none;
+    border-radius:0px 6px 6px 0px ;
+  }
+  .list{
+   text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 3px;
+    /* height: 15%; */
+    border-radius: 10px;
+    background-color: rgba(33, 36, 40, 0.29);
+    
+}
+.list:hover{
+    background-color: rgba(85, 91, 96, 0.132);
+    box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.29);
+  }
+  .list:hover .operations{
+    box-shadow: 0px 0px 10px rgba(4, 4, 4, 0.509);
+  }
+  .list h3{
+    flex: 1;
+    margin: 0;
+    margin-left: 2px;
+  }
+  .list .operations{
+    display: flex;
+    background-color: #25272d7c;
+    align-items: center;
+    gap: .5rem;
+    font-size: 1.5rem;
+    margin: 5px;
+    padding: 2px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.29);
+    box-sizing: border-box;
+  }
+  .operations span{
+    padding: 2px;
+    cursor: pointer;
+    background-color: #2a2f3a86;
+    border-radius: 3px;
+  }
+ .main-list{
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+ }
