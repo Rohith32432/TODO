@@ -4,8 +4,8 @@ import Nodecontext from './hooks/prwaticecontext';
 function Maincontext({ children }) {
     const values = {
         name: 'rohith venkata sai',
-        id: 210032432,
-        sec: 'BDA'
+        id: 2100032432,
+        category: 'BDA'
     }
 
     return (
