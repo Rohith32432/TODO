@@ -7,10 +7,15 @@ import Listitems from './Components/Listitems';
 
 function App() {
   const [data, setdata] = useState([]);
-  const save = (info) => {
-    if (!data.includes(info))
+  const save = (info,id) => {
+    if (id ==null && !data.includes(info) && info!='') 
       setdata([...data, info]);
-  };
+    else {
+      const newData = [...data]
+      newData[id]=info
+      setdata(newData)
+    }
+  }
 
   const del = (name) => {
     setdata(data.filter((d) => d !== name));
@@ -36,9 +41,10 @@ function App() {
     }
   };
   const [editname,setename]=useState('')
-  function update(name){
-    console.log(name);
-    setename(name)
+  const[id,setd]=useState(0)
+  function update(id){
+    setename(data[id])
+    setd(id)
   }
 
 
@@ -47,7 +53,7 @@ function App() {
       <div className="App">
         <div className='todo'>
           <h1>To Do</h1>
-          <Additems adddata={save} update={editname} />
+          <Additems adddata={save} update={editname} setupdate={setename} id={id}/>
           <div className="main-list">
  
           {data.map((dat, index) => (

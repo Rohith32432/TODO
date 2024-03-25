@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import '../assets/todo.css';
 
-function Additems({ adddata, update }) {
+function Additems({ adddata, update,setupdate,id }) {
   const [item, setItem] = useState('');
+  
+
   const handleChange = (e) => {
     const value = e.target.value;
     setItem(value);
@@ -11,8 +13,13 @@ function Additems({ adddata, update }) {
 
   const setItems = (e) => {
     e.preventDefault();
-    adddata(item);  
+   
+    if(update.length >0 )
+      adddata(item,id);
+    else adddata(item)
+
     setItem('');
+    setupdate('')
   };
 useEffect(()=>{
   if(update) setItem(update)

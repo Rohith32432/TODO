@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../assets/todo.css'
 import { FaEdit, FaRegEdit } from "react-icons/fa";
 import { FaArrowUpLong } from "react-icons/fa6";
@@ -18,21 +18,22 @@ function Listitems({ name, id, remove, onup, ondown,edit }) {
   const toggleDone = () => {
     setIsDone(!isDone);
   };
+  
 
-  const mystyle = {
-    color: isDone ? '' : 'red',
-  };
-
+const mystyle = {
+  color: isDone ? '' : 'red',
+  // backgroundColor: randomcolor()
+};
   return (
     <>
-      <div className="list" style={mystyle}>
+      <div className="list" style={mystyle} >
         <h3> {isDone?name:<del>{name}</del>}</h3>
         <div className="operations">
         <span onClick={() => onup(id)}><FaArrowUpLong/></span>
         <span onClick={() => ondown(id)}><FaArrowDownLong/></span>
         <span onClick={del}><MdDelete/></span>
         <span onClick={toggleDone}><MdDone/></span>
-        <span onClick={()=>edit(name)}><FaEdit/></span>
+        <span onClick={()=>edit(id)}><FaEdit/></span>
         </div>
       </div>
     </>
